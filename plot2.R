@@ -22,8 +22,6 @@ consumption_data <- read.table("household_power_consumption.txt",
                                            "Sub_metering_2","Sub_metering_3"))
 
 library(dplyr)
-library(lubridate)
-library(ggplot2)
 consumption_data <- mutate(consumption_data,Date=as.Date(Date,format="%d/%m/%Y"))
 consumption_data <- mutate(consumption_data,
                            Time=as.POSIXct(paste(consumption_data$Date, 
